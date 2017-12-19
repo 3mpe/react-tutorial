@@ -26,31 +26,29 @@ class LoginForm extends Component {
   render() {
     return (
       <KeyboardAvoidingView style={styles.containerStyle} behavior="padding" keyboardVerticalOffset={180}>
-          <View>
-            <View style={styles.subContainerStyle}>
-              <Text style={styles.textStyle}>E-mail Adresiniz</Text>
-              <TextInput
-                underlineColorAndroid='transparent'
-                style={styles.inputStyle}
-                value={this.props.email}
-                onChangeText={email => this.props.emailChanged(email)}
-                placeHolder="e-mail"
-              />
-            </View>
-            <View style={styles.subContainerStyle}>
-              <Text style={styles.textStyle}>Şifreniz</Text>
-              <TextInput
-                secureTextEntry
-                underlineColorAndroid='transparent'
-                style={styles.inputStyle}
-                value={this.props.password}
-                onChangeText={pass => this.props.passwordChanged(pass)}
-              />
-            </View>
-            <View style={styles.buttonStyle}>
-              {this.renderButton()}
-            </View>
-          </View>
+        <View style={styles.subContainerStyle}>
+          <Text style={styles.textStyle}>E-mail Adresiniz</Text>
+          <TextInput
+            underlineColorAndroid='transparent'
+            style={styles.inputStyle}
+            value={this.props.email}
+            onChangeText={email => this.props.emailChanged(email)}
+            placeHolder="e-mail"
+          />
+        </View>
+        <View style={styles.subContainerStyle}>
+          <Text style={styles.textStyle}>Şifreniz</Text>
+          <TextInput
+            secureTextEntry
+            underlineColorAndroid='transparent'
+            style={styles.inputStyle}
+            value={this.props.password}
+            onChangeText={pass => this.props.passwordChanged(pass)}
+          />
+        </View>
+        <View style={styles.buttonStyle}>
+          {this.renderButton()}
+        </View>
       </KeyboardAvoidingView>
     );
   }
