@@ -6,7 +6,7 @@ import Login from './page/Login';
 const RouterComponent = () => (
       <Router sceneStyle={{ marginTop: 20 }}>
         <Scene key="kimlik">
-          <Scene key="loginScreen" component={Login} title="" />
+          <Scene key="loginScreen" component={Login} title="" hideNavBar />
         </Scene>
       </Router>
     );
