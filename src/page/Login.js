@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { ImageBackground, Text } from 'react-native';
 
 import Wallpaper from '../components/Wallpaper';
 import LoginForm from '../components/LoginForm';
 import Logo from '../components/Logo';
+import bgSrc from '../image/bg.jpg';
 
 class Home extends Component {
   render() {
     return (
-			<View style={styles.container}>
+			<Wallpaper>
         <Logo />
 				<LoginForm />
-			</View>
+			</Wallpaper>
     );
   }
 }
@@ -19,8 +20,7 @@ const styles = {
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff'
+    alignItems: 'center'
   }
 };
 

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 		height: 70,
 	},
 	text: {
-		color: 'white',
+		color: '#000',
 		fontWeight: 'bold',
 		backgroundColor: 'transparent',
 		marginTop: 10,

@@ -63,7 +63,7 @@ const styles = {
   },
   subContainerStyle: {
     padding: 5,
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
     justifyContent: 'flex-start',
     flexDirection: 'column',
     borderColor: '#ddd',
@@ -71,14 +71,14 @@ const styles = {
   },
   buttonStyle: {
     padding: 5,
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
     justifyContent: 'flex-start',
     flexDirection: 'row'
   },
   inputStyle: {
     width: '100%',
     height: 50,
-    color: '#000',
+    color: '#fff',
     paddingRight: 5,
     paddingLeft: 5,
     fontSize: 18,
@@ -88,6 +88,7 @@ const styles = {
     borderColor: '#d6d7da',
   },
   textStyle: {
+    color: '#fff',
     padding: 3
   }
 };

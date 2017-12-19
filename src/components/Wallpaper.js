@@ -17,9 +17,9 @@ export default class Wallpaper extends Component {
 const styles = StyleSheet.create({
 	picture: {
 		flex: 1,
-		width: null,
-		height: null,
-    alignSelf: 'strecth',
-		resizeMode: 'cover',
+		width: '100%',
+		justifyContent: 'center',
+		alignItems: 'center',
+		flexDirection: 'column'
 	}
 });
