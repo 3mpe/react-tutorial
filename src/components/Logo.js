@@ -12,8 +12,8 @@ export default class Logo extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Image source={logoImg} style={styles.image} />
-				<Text style={styles.text}>REACT NATIVE</Text>
+				<Image source={logoImg} style={styles.image} resizeMode="contain" resizeMethod="resize" />
+				<Text style={styles.text}>REACT LOGO</Text>
 			</View>
 		);
 	}
@@ -21,18 +21,19 @@ export default class Logo extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 3,
+		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
+		flexDirection: 'column'
 	},
 	image: {
-		width: 80,
-		height: 80,
+		width: 180,
+		height: 70,
 	},
 	text: {
 		color: 'white',
 		fontWeight: 'bold',
 		backgroundColor: 'transparent',
-		marginTop: 20,
+		marginTop: 10,
 	}
 });

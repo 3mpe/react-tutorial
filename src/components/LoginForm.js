@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, KeyboardAvoidingView, Text, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../redux/actions';
 
@@ -25,35 +25,33 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <View style={styles.containerStyle}>
-          <View style={styles.subContainerStyle}>
-            <Text style={styles.textStyle}>E-mail Adresiniz</Text>
+      <KeyboardAvoidingView style={styles.containerStyle} behavior="padding" keyboardVerticalOffset={180}>
+          <View>
+            <View style={styles.subContainerStyle}>
+              <Text style={styles.textStyle}>E-mail Adresiniz</Text>
+              <TextInput
+                underlineColorAndroid='transparent'
+                style={styles.inputStyle}
+                value={this.props.email}
+                onChangeText={email => this.props.emailChanged(email)}
+                placeHolder="e-mail"
+              />
+            </View>
+            <View style={styles.subContainerStyle}>
+              <Text style={styles.textStyle}>Şifreniz</Text>
+              <TextInput
+                secureTextEntry
+                underlineColorAndroid='transparent'
+                style={styles.inputStyle}
+                value={this.props.password}
+                onChangeText={pass => this.props.passwordChanged(pass)}
+              />
+            </View>
+            <View style={styles.buttonStyle}>
+              {this.renderButton()}
+            </View>
           </View>
-          <View style={styles.subContainerStyle}>
-            <TextInput
-              underlineColorAndroid='transparent'
-              style={styles.inputStyle}
-              value={this.props.email}
-              onChangeText={email => this.props.emailChanged(email)}
-              placeHolder="e-mail"
-            />
-          </View>
-          <View style={styles.subContainerStyle}>
-            <Text style={styles.textStyle}>Şifreniz</Text>
-          </View>
-          <View style={styles.subContainerStyle}>
-            <TextInput
-              secureTextEntry
-              underlineColorAndroid='transparent'
-              style={styles.inputStyle}
-              value={this.props.password}
-              onChangeText={pass => this.props.passwordChanged(pass)}
-            />
-          </View>
-          <View style={styles.subContainerStyle}>
-            {this.renderButton()}
-          </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -61,50 +59,43 @@ class LoginForm extends Component {
 const styles = {
   containerStyle: {
     flex: 1,
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: '#ddd',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 20
-  },
-  backgroundImg: {
-    flex: 1,
-    alignSelf: 'stretch',
-    width: null,
-    justifyContent: 'center'
+    width: '90%'
   },
   subContainerStyle: {
-    borderBottomWidth: 1,
     padding: 5,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
-    flexDirection: 'row',
+    flexDirection: 'column',
     borderColor: '#ddd',
     position: 'relative'
   },
+  buttonStyle: {
+    padding: 5,
+    backgroundColor: '#fff',
+    justifyContent: 'flex-start',
+    flexDirection: 'row'
+  },
   inputStyle: {
+    width: '100%',
+    height: 50,
     color: '#000',
     paddingRight: 5,
     paddingLeft: 5,
     fontSize: 18,
     lineHeight: 23,
-    flex: 1,
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
   },
   textStyle: {
-    flex: 1,
-    padding: 8
+    padding: 3
   }
 };
 const mapStateToProps = ({ LoginFormResponse }) => {
   const { email, password, loading } = LoginFormResponse;
   return {
-    email: 'test@test.com',
-    password: '123456',
+    email,
+    password,
     loading
   };
 };
