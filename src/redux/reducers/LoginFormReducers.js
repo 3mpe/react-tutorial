@@ -8,7 +8,7 @@ import { EMAIL_CHANGED,
 const INITIAL_STATE = {
   email: '',
   password: '',
-  loadin: false
+  loading: false
 };
 
 export default (state = INITIAL_STATE, action) => {

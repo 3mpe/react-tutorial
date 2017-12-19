@@ -1,4 +1,5 @@
 import { Alert } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import { EMAIL_CHANGED,
   PASSWORD_CHANGED,
   LOGIN_USER } from './types';
@@ -29,5 +30,7 @@ export const loginUser = ({ email, password }) => (dispatch) => {
       );
     } else {
       // giris islemleri
+      // Actions.Home();
+      console.log('okee');
     }
   };
